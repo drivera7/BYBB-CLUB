@@ -98,5 +98,3 @@ Disclaimer, I used chat GPT to build these wire frames for me. My mac is not wor
 |                          |
 |--------------------------|
 
-
-# BYBB-CLUB
