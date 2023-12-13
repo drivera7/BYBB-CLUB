@@ -19,13 +19,17 @@ extension Date{
 class HealthManager: ObservableObject{
     
     let healthStore = HKHealthStore()
-    
+     
     @Published var activities: [String : Activity] = [:]
+    @Published var MockActivities: [String : Activity] = [
+        "Today Squats" : Activity(id: 0, title: "Todays squat", subtitle: "RPE", image: "figure.cross.training", amount: " 3x5"),
+        "Todays calories " : Activity(id: 1, title: "Todays calories", subtitle: "Goal: 900", image: ".flame", amount: " 3,000 ")
+    ]
     
     init(){
         let squats  = HKQuantityType(.physicalEffort)
         let calories = HKQuantityType(.activeEnergyBurned)
-        
+        let workouts = HKObjectType.workoutType()
         let healthTypes: Set = [squats, calories]
         
         Task{
@@ -125,7 +129,33 @@ class HealthManager: ObservableObject{
 
             CoreDataStack.shared.saveContext()
         }
-
+    func fetchDayRunningStats(){
+        let workouts = HKSampleType.workoutType()
+        let timePredicate = HKQuery.predicateForSamples(withStart: .startOfToday, end: Date())
+        let workoutPredicate = HKQuery.predicateForWorkouts(with: .crossTraining)
+        let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [timePredicate, workoutPredicate])
+        let query = HKSampleQuery(sampleType: workouts, predicate: predicate, limit: 30, sortDescriptors: nil){ _, sample, error in
+            guard let Workouts = sample as? [HKWorkout], error == nil else{
+                print("error in trying to fetch the workouts data")
+                return
+            }
+            var count : Int = 0
+            for workout in Workouts {
+                let duration = Int(workout.duration)/60
+                count += duration
+                print(workout.allStatistics)
+                print((workout.duration)/60)
+                print(workout.workoutActivityType)
+            }
+            
+            let activity = Activity(id: 3, title: "Todays workout", subtitle: "Minutes trianed this week", image: "figure.cross.training", amount: "count")
+            DispatchQueue.main.async {
+                self.activities["Todays Workout"] = activity
+            }
+            
+        }
+        healthStore.execute(query)
+    }
     
 }
 

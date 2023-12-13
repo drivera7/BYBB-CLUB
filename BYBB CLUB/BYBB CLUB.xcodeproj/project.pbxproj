@@ -53,6 +53,7 @@
 		A9AAC9A72B1FC9E4000B7101 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A9AAC9A62B1FC9E4000B7101 /* FirebaseStorage */; };
 		A9AAC9A92B1FC9E4000B7101 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = A9AAC9A82B1FC9E4000B7101 /* FirebaseStorageCombine-Community */; };
 		A9AAC9AB2B1FCD4F000B7101 /* authView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AAC9AA2B1FCD4F000B7101 /* authView.swift */; };
+		A9F96FEA2B29255E00357DBA /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F96FE92B29255E00357DBA /* AppColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		A9AAC9702B1F0D3F000B7101 /* BYBB CLUB.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BYBB CLUB.entitlements"; sourceTree = "<group>"; };
 		A9AAC9712B1FC93D000B7101 /* GoogleService-Info-3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info-3.plist"; path = "../../../../Downloads/GoogleService-Info-3.plist"; sourceTree = "<group>"; };
 		A9AAC9AA2B1FCD4F000B7101 /* authView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = authView.swift; sourceTree = "<group>"; };
+		A9F96FE92B29255E00357DBA /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				A980AC342B1FF4B60005A458 /* CoreDataStack.swift */,
+				A9F96FE92B29255E00357DBA /* AppColors.swift */,
 				A9AAC9572B1F013D000B7101 /* BYBB CLUB */,
 				A9AAC9562B1F013D000B7101 /* Products */,
 			);
@@ -285,6 +288,7 @@
 				A980AC392B1FF8AF0005A458 /* ExerciseVideoPlayerView.swift in Sources */,
 				A9AAC96B2B1F02D4000B7101 /* HomeView.swift in Sources */,
 				A9AAC9592B1F013D000B7101 /* BYBB_CLUBApp.swift in Sources */,
+				A9F96FEA2B29255E00357DBA /* AppColors.swift in Sources */,
 				A9AAC9692B1F01C0000B7101 /* BybbTabView.swift in Sources */,
 				A980AC302B1FF00C0005A458 /* ProgressView.swift in Sources */,
 			);
